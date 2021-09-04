@@ -1,1 +1,1 @@
-web:gunicorn dsn_backend.wsgi
+web: gunicorn dsn_backend.wsgi

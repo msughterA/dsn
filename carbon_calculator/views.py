@@ -8,7 +8,7 @@ from django.views.decorators.http import require_POST
 # Create your views here.
 
 # Model path
-MODEL_PATH=r'C:\Users\AYERHAN MSUGHTER\Desktop\DSN_CARBON_REDUCTION_HACKATHON\dsn_backend\dsn_backend\carbon_calculator\ai\vehicle_carbon_emission_model.sav'
+MODEL_PATH=r'./carbon_calculator/ai/vehicle_carbon_emission_model.sav'
 
 # Set the max carbon threshold for the vehicle
 THRESHOLD=10

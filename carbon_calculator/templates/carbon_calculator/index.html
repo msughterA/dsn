@@ -1,0 +1,80 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+	
+	    <!-- Favi-->
+		<link rel="icon" type="image/png"sizes="180x180" href="{% static 'carbon_calculator/apple-touch-icon.png' %}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{% static 'carbon_calculator/favicon-32x32.png' %}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{% static 'carbon_calculator/favicon-16x16.png' %}">
+		<link rel="manifest" href="{% static 'carbon_calculator/site.webmanifest' %}">
+		
+
+    <link rel="stylesheet" href="{% static 'carbon_calculator/fonts/icomoon/style.css' %}">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'carbon_calculator/css/bootstrap.min.css' %}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'carbon_calculator/css/style.css' %}">
+	
+
+    <title>CO₂ Monitoring App</title>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 mr-auto">
+          <h3 class="mb-3">Why Monitor CO₂ </h3>
+          <p>Planet Earth is our home and would be our first home no matter how far scientific exploration goes, but it seems that we are destroying our home gradually and this is a big problem. </p>
+          <p>The big question is “WHY SHOULD THE PROBLM BE SOLVED?” There are varieties of reasons why this problem should be solved, which includes but not limited to the fact that if this problem is solved, it  would reduce the occurrence of respiratory diseases that arise due to air pollution, it would also raise awareness of importance of electric vehicles in reducing CO₂ emission and more importantly, it would boost Nigeria’s economy whereby Nigerian Innovators can contribute to improvements on electric vehicles and reduce importation of vehicles to barest minimum.</p>
+          <p>You can use this Web Application to check the level of CO₂ a vehicle would emit. The differences might be little,but it’s the little things that adds up to become big.</p>
+          
+        </div>
+
+        <div class="col-md-6">
+          <div class="box">
+            <h3 class="heading">CO₂ Calculator</h3>
+            <form class="mb-5" action="{% url 'result' %}" method="POST" id="CO₂ Monitoring App" name="CO₂ Monitoring App">
+             {% csrf_token %}
+              <div class="row">
+                 <div class="row mb-3">
+                <div class="col-md-12 form-group">
+                  <label for="Number of cylinder<" class="col-form-label">Number of cylinder</label>
+                  <input type="Number" class="form-control" name="Number of cylinder" id="Number of cylinder" placeholder="Number of Cylinder" required="required">
+                </div>
+
+                <div class="col-md-12 form-group">
+                  <label for="name" class="col-form-label">Engine Size (Litres)</label>
+                  <input type="Number" class="form-control" name="Engine Size" id="Number of cylinder" placeholder="Engine Size" required="required">
+                </div>
+				<div class="col-md-12 form-group">
+                  <label for="name" class="col-form-label">Fuel Consumption (Litres/100KM)</label>
+                  <input type="Number" class="form-control" name="Fuel Consumption" id="Fuel Consumption" placeholder="Fuel Consumption (Litres/100KM" required="required">
+                </div>
+                <div class="col-md-12">
+                  <input type="submit" value="Submit"  class="btn btn-block btn-primary rounded-0 py-2 px-4">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+    
+    <script src="{% static 'carbon_calculator/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'carbon_calculator/js/popper.min.js' %}"></script>
+    <script src="{% static 'carbon_calculator/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'carbon_calculator/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'carbon_calculator/js/main.js' %}"></script>
+
+  </body>
+</html>

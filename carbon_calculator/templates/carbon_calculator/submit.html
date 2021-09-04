@@ -1,0 +1,77 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+	
+	    <!-- Favi-->
+		<link rel="apple-touch-icon" sizes="180x180" href="{% static 'carbon_calculator/apple-touch-icon.png' %}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{% static 'carbon_calculator/favicon-32x32.png' %}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{% static 'carbon_calculator/favicon-16x16.png' %}">
+		<link rel="manifest" href="{% static 'carbon_calculator/site.webmanifest' %}">
+		
+
+    <link rel="stylesheet" href="{% static 'carbon_calculator/fonts/icomoon/style.css' %}">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'carbon_calculator/css/bootstrap.min.css' %}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'carbon_calculator/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'carbon_calculator/css/onclick.css' %}">
+	
+
+    <title>CO₂ Monitoring App</title>
+	 <div class="content">
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 mr-auto">
+          <h3 class="mb-3">Total  CO₂ Emission</h3>
+      
+          
+        </div>
+
+        <div class="col-md-6">
+          <div class="box">
+        
+            <h2 class="heading">{{ emission }}</h2><!-- This is where the final result woul be-->
+            {% if emission > threshold %}
+            <h4>These vehicle's emission has passed the allowed Threshold</h4>
+            {% endif %}
+			<form class="mb-5" action="{% url 'home' %}" >
+              <div class="col-md-12">
+                  <input type="submit" value="Back to CO₂ Calculator"  class="btn btn-block btn-primary rounded-0 py-2 px-4">
+                  <span class="submitting"></span>
+                </div>
+              </div>
+            </form> 
+              <div class="row">
+                 <div class="row mb-3">
+				  
+              </div>
+            </form>
+
+    
+          </div>
+        </div>
+      </div>
+  </div>
+    
+    <script src="{% static 'carbon_calculator/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'carbon_calculator/js/popper.min.js' %}"></script>
+    <script src="{% static 'carbon_calculator/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'carbon_calculator/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'carbon_calculator/js/main.js' %}"></script>
+
+  </body>
+</html>
+
+ 
+	</body>
+
+</html>
+

@@ -1,0 +1,1 @@
+web: gunicorn dsn_backend.wsgi

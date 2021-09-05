@@ -32,9 +32,12 @@ def result(request):
 	model=pickle.load(open(MODEL_PATH,'rb'))
 	#make the prediction
 	prediction=model.predict(data)
-	#lets print our prediction out to the screen
-	#print(prediction[0])
+	if prediction[0]>THRESHOLD:
+		is_allowed=True
+	else:
+		is_allowed=False	
+	print(is_allowed)		
 	#print(request.POST['Engine Size'])
-	context={'emission':f'{math.ceil(prediction[0])}g/km','threshold':THRESHOLD}
+	context={'emission':f'{math.ceil(prediction[0])}g/km','is_allowed':is_allowed}
 	return render(request,'carbon_calculator/submit.html',context)
 	

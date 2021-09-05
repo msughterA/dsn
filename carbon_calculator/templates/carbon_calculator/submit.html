@@ -38,9 +38,9 @@
         <div class="col-md-6">
           <div class="box">
         
-            <h2 class="heading">{{ emission }}</h2><!-- This is where the final result woul be-->
-            {% if emission > threshold %}
-            <h4>These vehicle's emission has passed the allowed Threshold</h4>
+            <h2 class="heading">{{ emission }}</h2>
+            {% if is_allowed %}
+                <p>These vehicle's emission is above the allowed Threshold</p>
             {% endif %}
 			<form class="mb-5" action="{% url 'home' %}" >
               <div class="col-md-12">
